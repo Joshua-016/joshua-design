@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(145deg, orange 30%, black 70%);
+        }
+        .converter {
+            width: 450px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: whitesmoke;
+        }
+        .converter input[type="text"] {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 18px;
+        }
+        .converter input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="converter">
+    <h2>Currency Converter</h2>
+    <input style="width: 420px;" type="text" id="usdInput" placeholder="Enter amount in USD">
+    <input style="width: 420px;" type="button" value="Convert to NGN" onclick="convertToNaira()">
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function convertToNaira() {
+        var usdInput = parseFloat(document.getElementById('usdInput').value);
+        var resultElement = document.getElementById('result');
+        var exchangeRate = 1435.00; // Exchange rate (1 USD = 1435 NGN)
+        var result;
+
+        if (isNaN(usdInput)) {
+            resultElement.textContent = 'Please enter a valid number';
+            return;
+        }
+
+        result = usdInput * exchangeRate;
+        resultElement.textContent = usdInput + ' USD is ' + result.toFixed(2) + ' NGN';
+    }
+</script>
+
+</body>
+</html>
