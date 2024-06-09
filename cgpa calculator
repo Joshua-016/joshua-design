@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(115deg, maroon 20%, black 80%);
+        }
+        .calculator {
+            width: 450px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: goldenrod;
+        }
+        .calculator input[type="text"] {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 18px;
+        }
+        .calculator input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator">
+    <h2>CGPA Calculator</h2>
+    <label for="mth102">MTH 102 Grade:</label>
+    <input style="width: 420px;" type="text" id="mth102" placeholder="Enter grade for MTH 102">
+    <label for="csc107">PHY 102 Grade:</label>
+    <input style="width: 420px;" type="text" id="csc107" placeholder="Enter grade for CSC 107">
+    <label for="csc109">GST 112 Grade:</label>
+    <input style="width: 420px;" type="text" id="csc109" placeholder="Enter grade for CSC 109">
+    <label for="csc104">CSC 104 Grade:</label>
+    <input style="width: 420px;" type="text" id="csc104" placeholder="Enter grade for CSC 104">
+    <input type="button" value="Calculate CGPA" onclick="calculateCGPA()">
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function calculateCGPA() {
+        var mth102 = parseFloat(document.getElementById('mth102').value);
+        var csc107 = parseFloat(document.getElementById('csc107').value);
+        var csc109 = parseFloat(document.getElementById('csc109').value);
+        var csc104 = parseFloat(document.getElementById('csc104').value);
+        var resultElement = document.getElementById('result');
+        var totalCredits = 12; // Total credits for the four courses
+        var totalGradePoints = 0;
+        var cgpa;
+
+        if (isNaN(mth102) || isNaN(csc107) || isNaN(csc109) || isNaN(csc104)) {
+            resultElement.textContent = 'Please enter valid grades for all courses';
+            return;
+        }
+
+        // Calculate total grade points
+        totalGradePoints = (mth102 * 3) + (csc107 * 2) + (csc109 * 2) + (csc104 * 5);
+        // Calculate CGPA
+        cgpa = totalGradePoints / totalCredits;
+        resultElement.textContent = 'Your CGPA is: ' + cgpa.toFixed(2);
+    }
+</script>
+
+</body>
+</html>
