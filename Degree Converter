@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degree Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(real\ fruitsss\ pic.jpeg);
+            background-position: center;
+            background-size: cover;
+            background: linear-gradient(115deg, black 30%, blue 70%);
+        }
+        .converter {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: grey;
+        }
+        .converter input[type="text"] {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 18px;
+        }
+        .converter input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="converter">
+    <h2>Degree Converter</h2>
+    <input style="width: 250px;" type="text" id="inputValue" placeholder="Enter temperature">
+    <input   type="button" value="Convert to Fahrenheit" onclick="convertTo('F')">
+    <input  type="button" value="Convert to Celsius" onclick="convertTo('C')">
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function convertTo(unit) {
+        var inputValue = parseFloat(document.getElementById('inputValue').value);
+        var resultElement = document.getElementById('result');
+        var result;
+
+        if (isNaN(inputValue)) {
+            resultElement.textContent = 'Please enter a valid number';
+            return;
+        }
+
+        if (unit === 'F') {
+            result = (inputValue * 9 / 5) + 32;
+            resultElement.textContent = inputValue + '°C is ' + result.toFixed(2) + '°F';
+        } else if (unit === 'C') {
+            result = (inputValue - 32) * 5 / 9;
+            resultElement.textContent = inputValue + '°F is ' + result.toFixed(2) + '°C';
+        }
+    }
+</script>
+
+</body>
+</html>
