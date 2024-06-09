@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile Shop App</title>
+<style>
+  .html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Arial', sans-serif;
+    display: grid;
+  }
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f8f8f8;
+  }
+  .shop-title {
+    text-align: left;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px 0;
+  }
+  .search-bar {
+    margin: 0 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .category {
+    display: grid;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  .category img {
+    width: 700px;
+    height: 400px;
+    margin-right: 20px;
+  }
+  .category-info {
+    flex-grow: 1;
+  }
+  .category-info p {
+    margin: 0;
+    color: #555;
+  }
+  .category-info h2 {
+    margin: 5px 0;
+  }
+  .nav-bar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f8f8f8;
+    padding: 10px 0;
+  }
+  .nav-bar img {
+    width: 30px;
+    height: 50px;
+  }
+</style>
+</head>
+<body>
+<div>
+<h1 class="shop-title">Shop</h1>
+</div>
+<input type="text" class="search-bar" placeholder="Search">
+
+<div class="category">
+  <img src="living room chair.webp" alt="Furniture">
+  <div class="category-info">
+    <h1>Furniture</h1>
+    <p>800 items</p>
+  </div>
+</div>
+
+<div class="category">
+  <img src="kitchenware.jpg" alt="Kitchenware">
+  <div class="category-info">
+    <h1>Kitchenware</h1>
+    <p>400 items</p>
+  </div>
+</div>
+
+<div class="category">
+  <img src="headphones.webp" alt="headphones">
+  <div class="category-info">
+    <h1>Gadgets</h1>
+    <p>900 items</p>
+  </div>
+</div>
+
+<div class="nav-bar">
+  <!-- Navigation icons -->
+  <a href="file:///C:/Users/Nicholas%20O/Downloads/figmahomepg.html"><img src="home icon image.png" alt="Home"></a>
+  <img src="search icon.jpg" alt="Search">
+  <img src="shopping_bag_icon_.png" alt="Favorites">
+  <img src="message icon.png" alt="Cart">
+  <img src="profile-circle-icon.png" alt="Profile">
+</div>
+<marquee behavior="" direction="">THE MOST TRUSTED AND RELIABLE PLATFORM FOR BUYING AND SELLING</marquee>
+</body>
+</html>
